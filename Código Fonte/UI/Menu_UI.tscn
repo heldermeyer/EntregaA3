@@ -1,0 +1,317 @@
+[gd_scene load_steps=24 format=3 uid="uid://dkvu3x81ucqn8"]
+
+[ext_resource type="Texture2D" uid="uid://0q4hegyophku" path="res://Addons/Tiny Swords/UI/Buttons/Button_Red.png" id="1_06nfj"]
+[ext_resource type="Texture2D" uid="uid://bdhpjm8v2cdf2" path="res://Addons/Tiny Swords/UI/Banners/Banner_Vertical.png" id="1_x4od7"]
+[ext_resource type="Texture2D" uid="uid://h8nflojwqshl" path="res://Addons/Tiny Swords/UI/Buttons/Button_Red_Pressed.png" id="2_eyxr5"]
+[ext_resource type="Texture2D" uid="uid://cf25qjsxiwwlb" path="res://Addons/Tiny Swords/Resources/Resources/G_Idle_(NoShadow).png" id="3_rlqyw"]
+[ext_resource type="Script" path="res://UI/Menu_UI.gd" id="3_wbhae"]
+[ext_resource type="Texture2D" uid="uid://cjemirfq7hx6w" path="res://Addons/Tiny Swords/UI/Icons/Regular_08.png" id="5_i2mu0"]
+[ext_resource type="Texture2D" uid="uid://013pse7vkoah" path="res://Addons/Tiny Swords/UI/Icons/Regular_01.png" id="7_ocivi"]
+[ext_resource type="Texture2D" uid="uid://b3b4mbivp8git" path="res://Addons/Tiny Swords/UI/Icons/Pressed_01.png" id="8_7ylbw"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_80q2l"]
+texture = ExtResource("1_06nfj")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 32.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n257s"]
+texture = ExtResource("1_06nfj")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 32.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+modulate_color = Color(0.942823, 0.942823, 0.942823, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oomg2"]
+texture = ExtResource("2_eyxr5")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 32.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[sub_resource type="Theme" id="Theme_ug6y8"]
+Button/styles/hover = SubResource("StyleBoxTexture_80q2l")
+Button/styles/normal = SubResource("StyleBoxTexture_n257s")
+Button/styles/pressed = SubResource("StyleBoxTexture_oomg2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aq3si"]
+texture = ExtResource("1_x4od7")
+texture_margin_left = 32.0
+texture_margin_top = 32.0
+texture_margin_right = 32.0
+texture_margin_bottom = 32.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+region_rect = Rect2(32, 32, 128, 128)
+
+[sub_resource type="LabelSettings" id="LabelSettings_5yjff"]
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_obxwb"]
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_y553k"]
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ukc02"]
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_lolfw"]
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_27vqo"]
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lnmsw"]
+texture = ExtResource("7_ocivi")
+region_rect = Rect2(16, 0, 32, 48)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tyqsu"]
+texture = ExtResource("7_ocivi")
+region_rect = Rect2(16, 0, 32, 48)
+modulate_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_168cv"]
+texture = ExtResource("8_7ylbw")
+region_rect = Rect2(16, 0, 32, 48)
+modulate_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_dvox5"]
+Button/styles/hover = SubResource("StyleBoxTexture_lnmsw")
+Button/styles/normal = SubResource("StyleBoxTexture_tyqsu")
+Button/styles/pressed = SubResource("StyleBoxTexture_168cv")
+
+[node name="Menu" type="CanvasLayer"]
+process_mode = 2
+process_priority = 1
+script = ExtResource("3_wbhae")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.482353)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_ug6y8")
+
+[node name="Panel" type="Panel" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -224.0
+offset_top = -236.0
+offset_right = 78.0
+offset_bottom = 108.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.48622, 1.49033)
+theme_override_styles/panel = SubResource("StyleBoxTexture_aq3si")
+
+[node name="Label" type="Label" parent="Control/Panel"]
+layout_mode = 2
+offset_left = 26.9139
+offset_top = 21.4718
+offset_right = 93.9139
+offset_bottom = 44.4718
+text = "Ataque:"
+label_settings = SubResource("LabelSettings_5yjff")
+
+[node name="Label4" type="Label" parent="Control/Panel"]
+layout_mode = 2
+offset_left = 107.656
+offset_top = 21.4718
+offset_right = 117.656
+offset_bottom = 44.4718
+text = "5"
+label_settings = SubResource("LabelSettings_obxwb")
+
+[node name="TextureRect" type="TextureRect" parent="Control/Panel"]
+layout_mode = 2
+offset_left = 113.038
+offset_top = 7.38092
+offset_right = 241.038
+offset_bottom = 135.381
+scale = Vector2(0.348025, 0.348025)
+texture = ExtResource("3_rlqyw")
+
+[node name="TextureRect2" type="TextureRect" parent="Control/Panel"]
+layout_mode = 2
+offset_left = 113.038
+offset_top = 50.3244
+offset_right = 241.038
+offset_bottom = 178.324
+scale = Vector2(0.348025, 0.348025)
+texture = ExtResource("3_rlqyw")
+
+[node name="TextureRect3" type="TextureRect" parent="Control/Panel"]
+layout_mode = 2
+offset_left = 113.038
+offset_top = 93.2679
+offset_right = 241.038
+offset_bottom = 221.268
+scale = Vector2(0.348025, 0.348025)
+texture = ExtResource("3_rlqyw")
+
+[node name="AtqButton" type="Button" parent="Control/Panel"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 171.576
+offset_top = 16.1038
+offset_right = 220.576
+offset_bottom = 64.1038
+
+[node name="VidaButton" type="Button" parent="Control/Panel"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 171.576
+offset_top = 57.0344
+offset_right = 220.576
+offset_bottom = 105.034
+
+[node name="EspecialButton" type="Button" parent="Control/Panel"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 171.576
+offset_top = 98.6359
+offset_right = 220.576
+offset_bottom = 146.636
+
+[node name="Label2" type="Label" parent="Control/Panel"]
+layout_mode = 2
+offset_left = 26.9139
+offset_top = 64.4153
+offset_right = 93.9139
+offset_bottom = 87.4153
+text = "Vida:"
+label_settings = SubResource("LabelSettings_y553k")
+
+[node name="Label5" type="Label" parent="Control/Panel"]
+layout_mode = 2
+offset_left = 107.656
+offset_top = 64.4153
+offset_right = 117.656
+offset_bottom = 87.4153
+text = "5"
+label_settings = SubResource("LabelSettings_ukc02")
+
+[node name="Label3" type="Label" parent="Control/Panel"]
+layout_mode = 2
+offset_left = 26.9139
+offset_top = 107.359
+offset_right = 93.9139
+offset_bottom = 130.359
+text = "Especial:"
+label_settings = SubResource("LabelSettings_lolfw")
+
+[node name="Label6" type="Label" parent="Control/Panel"]
+layout_mode = 2
+offset_left = 107.656
+offset_top = 107.359
+offset_right = 126.656
+offset_bottom = 130.359
+text = "10"
+label_settings = SubResource("LabelSettings_27vqo")
+
+[node name="TextureRect4" type="TextureRect" parent="Control/Panel"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 145.335
+offset_top = 21.4718
+offset_right = 209.335
+offset_bottom = 85.4718
+scale = Vector2(0.504143, 0.536091)
+texture = ExtResource("5_i2mu0")
+
+[node name="TextureRect5" type="TextureRect" parent="Control/Panel"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 145.335
+offset_top = 64.4153
+offset_right = 209.335
+offset_bottom = 128.415
+scale = Vector2(0.504143, 0.536091)
+texture = ExtResource("5_i2mu0")
+
+[node name="TextureRect6" type="TextureRect" parent="Control/Panel"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 145.335
+offset_top = 107.359
+offset_right = 209.335
+offset_bottom = 171.359
+scale = Vector2(0.504143, 0.536091)
+texture = ExtResource("5_i2mu0")
+
+[node name="Control2" type="Control" parent="."]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 112.0
+offset_top = -228.0
+offset_right = 184.0
+offset_bottom = -164.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_dvox5")
+
+[node name="CloseButton" type="Button" parent="Control2"]
+unique_name_in_owner = true
+process_mode = 2
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -24.0
+offset_right = -4.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(4.71954, 4.71954)

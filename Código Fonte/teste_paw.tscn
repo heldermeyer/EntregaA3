@@ -1,0 +1,78 @@
+[gd_scene load_steps=4 format=3 uid="uid://tar8lraetgeu"]
+
+[ext_resource type="Texture2D" uid="uid://blb81wy1qpjy4" path="res://Addons/Tiny Swords/Factions/Knights/Troops/Pawn/Red/Pawn_Red.png" id="1_l00uq"]
+[ext_resource type="PackedScene" uid="uid://di57udcxseeuc" path="res://Enemy/paw_axe.tscn" id="2_rr8yy"]
+[ext_resource type="PackedScene" uid="uid://b27ae3m6sfrb7" path="res://Enemy/paw_hammer.tscn" id="3_lowiy"]
+
+[node name="teste_enemy" type="Node2D"]
+
+[node name="PawnRed" type="Sprite2D" parent="."]
+position = Vector2(641, 370)
+texture = ExtResource("1_l00uq")
+
+[node name="Label" type="Label" parent="PawnRed"]
+offset_left = 628.0
+offset_top = -498.0
+offset_right = 664.0
+offset_bottom = -475.0
+scale = Vector2(2.57762, 1.80733)
+text = "Idle"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="PawnRed"]
+offset_left = 603.0
+offset_top = -303.0
+offset_right = 639.0
+offset_bottom = -280.0
+scale = Vector2(2.57762, 1.80733)
+text = "Run"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label3" type="Label" parent="PawnRed"]
+offset_left = 582.0
+offset_top = -122.0
+offset_right = 686.0
+offset_bottom = -99.0
+scale = Vector2(2.57762, 1.80733)
+text = "Attack_side_1"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label4" type="Label" parent="PawnRed"]
+offset_left = 583.0
+offset_top = 65.0
+offset_right = 687.0
+offset_bottom = 88.0
+scale = Vector2(2.57762, 1.80733)
+text = "Attack_side_2"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label5" type="Label" parent="PawnRed"]
+offset_left = 562.0
+offset_top = 260.0
+offset_right = 678.0
+offset_bottom = 283.0
+scale = Vector2(2.57762, 1.80733)
+text = "scared_1"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label6" type="Label" parent="PawnRed"]
+offset_left = 590.0
+offset_top = 454.0
+offset_right = 706.0
+offset_bottom = 477.0
+scale = Vector2(2.57762, 1.80733)
+text = "Scared_2"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label9" type="Label" parent="PawnRed"]
+offset_left = -510.0
+offset_top = -641.0
+offset_right = -222.0
+offset_bottom = -618.0
+scale = Vector2(3.52505, 2.26542)
+text = " 0           1           2           3           4           5"
+metadata/_edit_use_anchors_ = true
+
+[node name="paw_axe" parent="." instance=ExtResource("2_rr8yy")]
+
+[node name="paw_hammer" parent="." instance=ExtResource("3_lowiy")]

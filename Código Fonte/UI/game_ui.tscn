@@ -1,0 +1,195 @@
+[gd_scene load_steps=17 format=3 uid="uid://grk0kc7i2lpf"]
+
+[ext_resource type="Script" path="res://UI/game_ui.gd" id="1_prs7m"]
+[ext_resource type="Texture2D" uid="uid://cjcp012mumv5n" path="res://Addons/Tiny Swords/UI/Banners/Banner_Horizontal.png" id="2_24j4j"]
+[ext_resource type="Texture2D" uid="uid://benbw8rx8eqic" path="res://Addons/Tiny Swords/Resources/Resources/G_Idle.png" id="3_mcvbr"]
+[ext_resource type="Texture2D" uid="uid://d0nsgwsj7m7fn" path="res://Addons/Tiny Swords/Resources/Resources/M_Idle.png" id="4_ytd5d"]
+[ext_resource type="Texture2D" uid="uid://6l5v46bvi1t0" path="res://Addons/Tiny Swords/Deco/03.png" id="5_rymk6"]
+
+[sub_resource type="SystemFont" id="SystemFont_wtogy"]
+font_names = PackedStringArray("Fantasy")
+font_weight = 999
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_jsgxe"]
+font = SubResource("SystemFont_wtogy")
+font_size = 48
+outline_size = 12
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_locbm"]
+texture = ExtResource("2_24j4j")
+texture_margin_left = 32.0
+texture_margin_top = 16.0
+texture_margin_right = 32.0
+texture_margin_bottom = 48.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+region_rect = Rect2(32, 48, 128, 128)
+
+[sub_resource type="SystemFont" id="SystemFont_uq5g3"]
+font_names = PackedStringArray("Fantasy")
+font_weight = 999
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_hye1b"]
+font = SubResource("SystemFont_uq5g3")
+font_size = 48
+font_color = Color(0.912924, 0.790677, 0, 1)
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v3bg4"]
+atlas = ExtResource("3_mcvbr")
+region = Rect2(40, 48, 56, 56)
+
+[sub_resource type="SystemFont" id="SystemFont_xbymr"]
+font_names = PackedStringArray("Fantasy")
+font_weight = 999
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_w88p6"]
+font = SubResource("SystemFont_xbymr")
+font_size = 48
+font_color = Color(1, 0.276631, 0.18689, 1)
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kg188"]
+atlas = ExtResource("4_ytd5d")
+region = Rect2(40, 48, 56, 56)
+
+[sub_resource type="SystemFont" id="SystemFont_o15ef"]
+font_names = PackedStringArray("Fantasy")
+
+[sub_resource type="LabelSettings" id="LabelSettings_euxnb"]
+font = SubResource("SystemFont_o15ef")
+font_size = 48
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[node name="GameUI" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_prs7m")
+
+[node name="Control" type="Control" parent="."]
+process_mode = 1
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Tempo" type="Label" parent="Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 529.5
+offset_right = 605.5
+offset_bottom = 49.0
+grow_horizontal = 2
+text = "10:00"
+label_settings = SubResource("LabelSettings_jsgxe")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel3" type="Panel" parent="."]
+process_mode = 3
+offset_left = 10.0
+offset_top = 11.0
+offset_right = 467.0
+offset_bottom = 101.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_locbm")
+
+[node name="Ouro" type="Label" parent="Panel3"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -46.5
+offset_top = 3.0
+offset_right = 48.5
+offset_bottom = 52.0
+grow_horizontal = 2
+text = "0
+"
+label_settings = SubResource("LabelSettings_hye1b")
+horizontal_alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel3/Ouro"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -1.0
+offset_top = -19.5
+offset_right = 127.0
+offset_bottom = 108.5
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.308956, 0.317982)
+texture = SubResource("AtlasTexture_v3bg4")
+
+[node name="Carne" type="Label" parent="Panel3"]
+unique_name_in_owner = true
+layout_mode = 1
+offset_left = 23.0
+offset_top = 4.0
+offset_right = 118.0
+offset_bottom = 53.0
+text = "0
+"
+label_settings = SubResource("LabelSettings_w88p6")
+horizontal_alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel3/Carne"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 4.00001
+offset_top = -19.5
+offset_right = 132.0
+offset_bottom = 108.5
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+texture = SubResource("AtlasTexture_kg188")
+
+[node name="Cogumelo" type="Label" parent="Panel3"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -136.0
+offset_top = 4.0
+offset_right = -61.0
+offset_bottom = 52.0
+grow_horizontal = 0
+text = "0"
+label_settings = SubResource("LabelSettings_euxnb")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Panel3/Cogumelo"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -9.0
+offset_top = -28.0
+offset_right = 55.0
+offset_bottom = 36.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.896904, 0.896904)
+texture = ExtResource("5_rymk6")

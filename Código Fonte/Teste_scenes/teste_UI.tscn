@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://bwuy3pil3ck6m"]
+
+[ext_resource type="PackedScene" uid="uid://cncoagbqxpk4" path="res://Player/player.tscn" id="1_ftb3e"]
+[ext_resource type="PackedScene" uid="uid://grk0kc7i2lpf" path="res://UI/game_ui.tscn" id="1_wjfcl"]
+[ext_resource type="PackedScene" uid="uid://cao5aoryxgdol" path="res://Enemy/goblin.tscn" id="4_su4ig"]
+[ext_resource type="PackedScene" uid="uid://byo6d4cih8ne4" path="res://Enemy/sheep.tscn" id="5_1r2xu"]
+[ext_resource type="PackedScene" uid="uid://n8pyots4sp17" path="res://misc/gold.tscn" id="5_hscbi"]
+
+[node name="TesteUi" type="Node2D"]
+
+[node name="GameUI" parent="." instance=ExtResource("1_wjfcl")]
+
+[node name="Player" parent="." instance=ExtResource("1_ftb3e")]
+position = Vector2(609, 340)
+
+[node name="goblin" parent="." instance=ExtResource("4_su4ig")]
+position = Vector2(945, 347)
+
+[node name="sheep" parent="." instance=ExtResource("5_1r2xu")]
+position = Vector2(831, 518)
+
+[node name="Gold" parent="." instance=ExtResource("5_hscbi")]
+position = Vector2(325, 356)

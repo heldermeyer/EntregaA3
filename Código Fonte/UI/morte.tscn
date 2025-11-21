@@ -1,0 +1,233 @@
+[gd_scene load_steps=19 format=3 uid="uid://detd0qlxachuj"]
+
+[ext_resource type="Script" path="res://UI/morte.gd" id="1_gda0a"]
+[ext_resource type="Texture2D" uid="uid://6beqhjlqtw2c" path="res://Addons/Tiny Swords/UI/Ribbons/Ribbon_Red_3Slides.png" id="1_n7gn4"]
+[ext_resource type="Texture2D" uid="uid://bdhpjm8v2cdf2" path="res://Addons/Tiny Swords/UI/Banners/Banner_Vertical.png" id="2_7mcd6"]
+[ext_resource type="Texture2D" uid="uid://b7r2giq0t733d" path="res://Addons/Tiny Swords/UI/Buttons/Button_Blue_3Slides.png" id="4_d1d2r"]
+[ext_resource type="Texture2D" uid="uid://bmuc3opupk0md" path="res://Addons/Tiny Swords/UI/Buttons/Button_Blue_3Slides_Pressed.png" id="5_c5gi4"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ab4ae"]
+texture = ExtResource("1_n7gn4")
+texture_margin_left = 64.0
+texture_margin_right = 64.0
+axis_stretch_horizontal = 2
+region_rect = Rect2(0, 0, 192, 64)
+
+[sub_resource type="SystemFont" id="SystemFont_dpak4"]
+font_names = PackedStringArray("Fantasy")
+
+[sub_resource type="LabelSettings" id="LabelSettings_memcy"]
+font = SubResource("SystemFont_dpak4")
+font_size = 64
+font_color = Color(0.635294, 0, 0, 1)
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cl734"]
+texture = ExtResource("2_7mcd6")
+texture_margin_left = 32.0
+texture_margin_top = 32.0
+texture_margin_right = 32.0
+texture_margin_bottom = 32.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+region_rect = Rect2(32, 32, 128, 128)
+
+[sub_resource type="SystemFont" id="SystemFont_8mffh"]
+font_names = PackedStringArray("Fantasy")
+
+[sub_resource type="LabelSettings" id="LabelSettings_jq0r5"]
+font = SubResource("SystemFont_8mffh")
+font_size = 36
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_tmnav"]
+font_names = PackedStringArray("Fantasy")
+
+[sub_resource type="LabelSettings" id="LabelSettings_huldw"]
+font = SubResource("SystemFont_tmnav")
+font_size = 36
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_flp05"]
+font_names = PackedStringArray("Fantasy")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fkm6w"]
+texture = ExtResource("4_d1d2r")
+texture_margin_left = 48.0
+texture_margin_top = 16.0
+texture_margin_right = 48.0
+texture_margin_bottom = 32.0
+axis_stretch_horizontal = 2
+region_rect = Rect2(0, 0, 192, 64)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dq0do"]
+texture = ExtResource("4_d1d2r")
+texture_margin_left = 48.0
+texture_margin_top = 16.0
+texture_margin_right = 48.0
+texture_margin_bottom = 32.0
+axis_stretch_horizontal = 2
+modulate_color = Color(0.93845, 0.93845, 0.93845, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kovmk"]
+texture = ExtResource("5_c5gi4")
+texture_margin_left = 43.0
+texture_margin_top = 10.0
+texture_margin_right = 41.0
+texture_margin_bottom = 32.0
+axis_stretch_horizontal = 2
+region_rect = Rect2(5, 5, 180, 59)
+
+[sub_resource type="Theme" id="Theme_8ev4y"]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/constants/outline_size = 5
+Button/font_sizes/font_size = 36
+Button/fonts/font = SubResource("SystemFont_flp05")
+Button/styles/hover = SubResource("StyleBoxTexture_fkm6w")
+Button/styles/normal = SubResource("StyleBoxTexture_dq0do")
+Button/styles/pressed = SubResource("StyleBoxTexture_kovmk")
+
+[node name="Morte" type="CanvasLayer"]
+script = ExtResource("1_gda0a")
+
+[node name="Background" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Background"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameoverPanel" type="Panel" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -192.0
+offset_top = 24.0
+offset_right = 192.0
+offset_bottom = 129.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ab4ae")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="GameoverPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.0
+offset_top = -44.5
+offset_right = 109.0
+offset_bottom = 20.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Game Over
+"
+label_settings = SubResource("LabelSettings_memcy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DeathInfo" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = -132.0
+offset_right = 193.0
+offset_bottom = 268.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_cl734")
+
+[node name="GridContainer" type="GridContainer" parent="DeathInfo"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -160.5
+offset_top = 16.0
+offset_right = 165.5
+offset_bottom = 147.0
+grow_horizontal = 2
+theme_override_constants/h_separation = 7
+columns = 2
+
+[node name="Label2" type="Label" parent="DeathInfo/GridContainer"]
+layout_mode = 2
+text = "Tempo Recorde:"
+label_settings = SubResource("LabelSettings_jq0r5")
+
+[node name="TimeLabel" type="Label" parent="DeathInfo/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "12:36
+"
+label_settings = SubResource("LabelSettings_huldw")
+
+[node name="Label" type="Label" parent="DeathInfo/GridContainer"]
+layout_mode = 2
+text = "Inimigos Mortos:"
+label_settings = SubResource("LabelSettings_jq0r5")
+
+[node name="DeadsLabel" type="Label" parent="DeathInfo/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "58"
+label_settings = SubResource("LabelSettings_jq0r5")
+
+[node name="Label5" type="Label" parent="DeathInfo/GridContainer"]
+layout_mode = 2
+text = "Ouro Coletado:"
+label_settings = SubResource("LabelSettings_jq0r5")
+
+[node name="OuroLabel" type="Label" parent="DeathInfo/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "50"
+label_settings = SubResource("LabelSettings_jq0r5")
+
+[node name="Control" type="Control" parent="DeathInfo"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -136.5
+offset_top = 16.0
+offset_right = 127.5
+offset_bottom = 96.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_8ev4y")
+
+[node name="RestartButton" type="Button" parent="DeathInfo/Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -136.0
+offset_top = -42.5
+offset_right = 136.0
+offset_bottom = 42.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Restart"

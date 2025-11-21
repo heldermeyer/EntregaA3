@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cay71wp5fdv6l"]
+
+[ext_resource type="PackedScene" uid="uid://cncoagbqxpk4" path="res://Player/player.tscn" id="1_akkgj"]
+[ext_resource type="PackedScene" uid="uid://di57udcxseeuc" path="res://Enemy/paw_axe.tscn" id="2_1310w"]
+[ext_resource type="PackedScene" uid="uid://b27ae3m6sfrb7" path="res://Enemy/paw_hammer.tscn" id="3_4evao"]
+
+[node name="TesteHealth" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_akkgj")]
+position = Vector2(557, 343)
+
+[node name="paw_axe" parent="." instance=ExtResource("2_1310w")]
+position = Vector2(1037, 338)
+
+[node name="paw_hammer" parent="." instance=ExtResource("3_4evao")]
+position = Vector2(980, 490)

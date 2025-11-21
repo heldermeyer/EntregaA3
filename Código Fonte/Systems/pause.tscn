@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bri58ll1wauht"]
+
+[ext_resource type="Script" path="res://Pause.gd" id="1_3ioeu"]
+[ext_resource type="PackedScene" uid="uid://dkvu3x81ucqn8" path="res://UI/Menu_UI.tscn" id="2_vvalv"]
+
+[node name="Pause" type="Node"]
+process_mode = 3
+script = ExtResource("1_3ioeu")
+menu_UI = ExtResource("2_vvalv")

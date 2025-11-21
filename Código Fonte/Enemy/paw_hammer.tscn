@@ -1,0 +1,158 @@
+[gd_scene load_steps=15 format=3 uid="uid://b27ae3m6sfrb7"]
+
+[ext_resource type="Script" path="res://Enemy/behaviors/follow_player.gd" id="1_8s461"]
+[ext_resource type="Texture2D" uid="uid://blb81wy1qpjy4" path="res://Addons/Tiny Swords/Factions/Knights/Troops/Pawn/Red/Pawn_Red.png" id="1_crees"]
+[ext_resource type="Script" path="res://Enemy/enemy.gd" id="1_kwtat"]
+[ext_resource type="PackedScene" uid="uid://dw4vj8xrea1ob" path="res://misc/skull.tscn" id="2_brk8l"]
+[ext_resource type="PackedScene" uid="uid://n8pyots4sp17" path="res://misc/gold.tscn" id="2_igntx"]
+[ext_resource type="PackedScene" uid="uid://cyf0b0eyafmje" path="res://misc/cogumelo.tscn" id="4_1nhjm"]
+
+[sub_resource type="Animation" id="Animation_47cxo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpriteEnemy:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_2l3d7"]
+resource_name = "attack_enemy"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpriteEnemy:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 2), Vector2i(1, 2), Vector2i(2, 2), Vector2i(3, 2), Vector2i(4, 2), Vector2i(5, 2)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0],
+"method": &"deal_damage_to_player"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_vyqmi"]
+resource_name = "idle_enemy"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpriteEnemy:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0), Vector2i(4, 0), Vector2i(5, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_u4sqe"]
+resource_name = "run_enemy"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpriteEnemy:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 1), Vector2i(1, 1), Vector2i(2, 1), Vector2i(3, 1), Vector2i(4, 1), Vector2i(5, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_niw7n"]
+_data = {
+"RESET": SubResource("Animation_47cxo"),
+"attack_enemy": SubResource("Animation_2l3d7"),
+"idle_enemy": SubResource("Animation_vyqmi"),
+"run_enemy": SubResource("Animation_u4sqe")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_05x57"]
+radius = 15.0794
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kj4lq"]
+radius = 240.033
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_66tty"]
+radius = 18.0
+height = 50.0
+
+[node name="paw_hammer" type="CharacterBody2D" groups=["enemy"]]
+motion_mode = 1
+script = ExtResource("1_kwtat")
+health = 6
+dead_prefab = ExtResource("2_brk8l")
+drop_chance = 0.5
+drop_items = Array[PackedScene]([ExtResource("2_igntx"), ExtResource("4_1nhjm")])
+drop_chances = Array[float]([0.75, 0.25])
+
+[node name="SpriteEnemy" type="Sprite2D" parent="."]
+position = Vector2(0, -26)
+texture = ExtResource("1_crees")
+hframes = 6
+vframes = 6
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_niw7n")
+}
+autoplay = "idle_enemy"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(0, -6)
+rotation = 3.14159
+scale = Vector2(1.32632, -0.568401)
+shape = SubResource("CircleShape2D_05x57")
+debug_color = Color(0, 0.6, 0.701961, 0.0705882)
+
+[node name="FollowPlayer" type="Node" parent="."]
+script = ExtResource("1_8s461")
+speed = 0.6
+attack_distance = 50.0
+
+[node name="EnemyAtqArea" type="Area2D" parent="."]
+position = Vector2(0, -26)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyAtqArea"]
+position = Vector2(0, 14)
+shape = SubResource("CircleShape2D_kj4lq")
+debug_color = Color(0.933333, 0, 0, 0)
+
+[node name="DamageMarker" type="Marker2D" parent="."]
+position = Vector2(0, -53)
+
+[node name="Area2D" type="Area2D" parent="." groups=["enemy"]]
+position = Vector2(0, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -24)
+shape = SubResource("CapsuleShape2D_66tty")
+debug_color = Color(1, 0, 0, 0)

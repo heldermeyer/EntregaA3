@@ -1,0 +1,235 @@
+[gd_scene load_steps=47 format=3 uid="uid://c05va34j8m07c"]
+
+[ext_resource type="Texture2D" uid="uid://b80jcbl3jlao7" path="res://Addons/Tiny Swords/Terrain/Ground/Tilemap_Elevation.png" id="1_hqwtu"]
+[ext_resource type="Texture2D" uid="uid://bvul77ywkko7h" path="res://Addons/Tiny Swords/Terrain/Ground/Tilemap_Flat.png" id="2_db2qs"]
+[ext_resource type="Texture2D" uid="uid://bnhu8g8feol51" path="res://Addons/Tiny Swords/Terrain/Ground/Shadows.png" id="3_2fw71"]
+[ext_resource type="Texture2D" uid="uid://db1gquagvjq6i" path="res://Addons/Tiny Swords/Terrain/Bridge/Bridge_All.png" id="4_effet"]
+[ext_resource type="Texture2D" uid="uid://xyclxv02ibg1" path="res://Addons/Tiny Swords/Terrain/Water/Foam/Foam.png" id="5_ku20e"]
+[ext_resource type="Texture2D" uid="uid://brpdr1n8gdu88" path="res://Addons/Tiny Swords/Terrain/Water/Rocks/Rocks_01.png" id="6_dovvd"]
+[ext_resource type="Texture2D" uid="uid://cup18fjqcvo2i" path="res://Addons/Tiny Swords/Terrain/Water/Rocks/Rocks_02.png" id="7_ekdon"]
+[ext_resource type="Texture2D" uid="uid://cqjt44fb6cji3" path="res://Addons/Tiny Swords/Terrain/Water/Rocks/Rocks_03.png" id="8_ia1y8"]
+[ext_resource type="Texture2D" uid="uid://c37e15gtqt4uv" path="res://Addons/Tiny Swords/Terrain/Water/Rocks/Rocks_04.png" id="9_tun1j"]
+[ext_resource type="Texture2D" uid="uid://d23j6sll04ccn" path="res://Addons/Tiny Swords/Terrain/Water/Water.png" id="10_1gvmv"]
+[ext_resource type="Texture2D" uid="uid://cwsfk3c4mufcv" path="res://Addons/Tiny Swords/Factions/Knights/Troops/Archer/Archer + Bow/Archer_Blue_(NoArms).png" id="11_pebl0"]
+[ext_resource type="Texture2D" uid="uid://d8312nelb02m" path="res://Addons/Tiny Swords/Factions/Knights/Troops/Archer/Archer + Bow/Archer_Bow_Blue.png" id="12_sg3hh"]
+[ext_resource type="Texture2D" uid="uid://q24tusdt0guf" path="res://Addons/Tiny Swords/Factions/Knights/Troops/Archer/Archer + Bow/Archer_Bow_Red.png" id="13_7w5my"]
+[ext_resource type="Texture2D" uid="uid://rjb6xm70bw80" path="res://Addons/Tiny Swords/Factions/Knights/Troops/Archer/Archer + Bow/Archer_Bow_Yellow.png" id="14_r6r0l"]
+[ext_resource type="Texture2D" uid="uid://ds347bfpqle3c" path="res://Addons/Tiny Swords/Factions/Knights/Troops/Archer/Archer + Bow/Archer_Purple_(NoArms).png" id="15_apetv"]
+[ext_resource type="Texture2D" uid="uid://dbfo542wvl8kh" path="res://Addons/Tiny Swords/Factions/Knights/Troops/Archer/Archer + Bow/Archer_Red_(NoArms).png" id="16_kulj5"]
+[ext_resource type="Texture2D" uid="uid://cld1ignm6g62r" path="res://Addons/Tiny Swords/Factions/Knights/Troops/Archer/Archer + Bow/Archer_Yellow_(NoArms).png" id="17_jesy7"]
+[ext_resource type="Texture2D" uid="uid://2aeeng1g1ayk" path="res://Addons/Tiny Swords/Factions/Knights/Troops/Archer/Blue/Archer_Blue.png" id="18_xmeas"]
+[ext_resource type="Texture2D" uid="uid://drxy6wqb74cxt" path="res://Addons/Tiny Swords/Factions/Knights/Troops/Warrior/Blue/Warrior_Blue.png" id="19_0pvnt"]
+[ext_resource type="Texture2D" uid="uid://bcbbgdpy638qi" path="res://Addons/Tiny Swords/Factions/Knights/Troops/Pawn/Blue/Pawn_Blue.png" id="20_jwtml"]
+[ext_resource type="Texture2D" uid="uid://d0muy0g7i5161" path="res://Addons/Tiny Swords/Factions/Knights/Troops/Dead/Dead.png" id="21_mdmh0"]
+[ext_resource type="Texture2D" uid="uid://bmkgm2pjq23si" path="res://Addons/Tiny Swords/Factions/Goblins/Troops/Torch/Red/Torch_Red.png" id="22_txtup"]
+[ext_resource type="Texture2D" uid="uid://b4nj643grebkf" path="res://Addons/Tiny Swords/Factions/Goblins/Buildings/Wood_House/Goblin_House.png" id="23_uwwb4"]
+[ext_resource type="Texture2D" uid="uid://d32j045hf3nc7" path="res://Addons/Tiny Swords/Factions/Goblins/Buildings/Wood_House/Goblin_House_Destroyed.png" id="24_ggl7q"]
+[ext_resource type="Texture2D" uid="uid://bdsw3ysykmr2s" path="res://Addons/Tiny Swords/Factions/Goblins/Buildings/Wood_Tower/Wood_Tower_Blue.png" id="25_c0ov7"]
+[ext_resource type="Texture2D" uid="uid://dg1eudcyuon11" path="res://Addons/Tiny Swords/Factions/Goblins/Buildings/Wood_Tower/Wood_Tower_Destroyed.png" id="26_pa2hb"]
+[ext_resource type="Texture2D" uid="uid://brcd4tkuxd5yp" path="res://Addons/Tiny Swords/Factions/Goblins/Buildings/Wood_Tower/Wood_Tower_InConstruction.png" id="27_x6h0a"]
+[ext_resource type="Texture2D" uid="uid://cg4jwmr7lrv4j" path="res://Addons/Tiny Swords/Factions/Knights/Buildings/Castle/Castle_Blue.png" id="28_6yi5l"]
+[ext_resource type="Texture2D" uid="uid://c5g0q8f1b8a" path="res://Addons/Tiny Swords/Factions/Knights/Buildings/Castle/Castle_Construction.png" id="29_u0qie"]
+[ext_resource type="Texture2D" uid="uid://si8hlx2bcsmo" path="res://Addons/Tiny Swords/Factions/Knights/Buildings/Castle/Castle_Destroyed.png" id="30_kg033"]
+[ext_resource type="Texture2D" uid="uid://qa1cucmhbc45" path="res://Addons/Tiny Swords/Factions/Knights/Buildings/House/House_Blue.png" id="31_exhuk"]
+[ext_resource type="Texture2D" uid="uid://6ye0ihu22jjn" path="res://Addons/Tiny Swords/Factions/Knights/Buildings/House/House_Construction.png" id="32_a8t7j"]
+[ext_resource type="Texture2D" uid="uid://bf3a2ymf0uves" path="res://Addons/Tiny Swords/Factions/Knights/Buildings/House/House_Destroyed.png" id="33_qm3e8"]
+[ext_resource type="Texture2D" uid="uid://d2kdfbjo5kv74" path="res://Addons/Tiny Swords/Factions/Knights/Buildings/Tower/Tower_Blue.png" id="34_sj3j5"]
+[ext_resource type="Texture2D" uid="uid://sogbi1q8is2x" path="res://Addons/Tiny Swords/Factions/Knights/Buildings/Tower/Tower_Construction.png" id="35_xaa2y"]
+[ext_resource type="Texture2D" uid="uid://cnukci5u7etuq" path="res://Addons/Tiny Swords/Factions/Knights/Buildings/Tower/Tower_Destroyed.png" id="36_dhnmo"]
+[ext_resource type="Texture2D" uid="uid://blb81wy1qpjy4" path="res://Addons/Tiny Swords/Factions/Knights/Troops/Pawn/Red/Pawn_Red.png" id="38_6a0n5"]
+[ext_resource type="Texture2D" uid="uid://benbw8rx8eqic" path="res://Addons/Tiny Swords/Resources/Resources/G_Idle.png" id="38_gqw02"]
+[ext_resource type="Texture2D" uid="uid://cf25qjsxiwwlb" path="res://Addons/Tiny Swords/Resources/Resources/G_Idle_(NoShadow).png" id="39_lscge"]
+[ext_resource type="Texture2D" uid="uid://blvla4vevim6a" path="res://Addons/Tiny Swords/Resources/Resources/G_Spawn.png" id="40_35v50"]
+[ext_resource type="Texture2D" uid="uid://d0nsgwsj7m7fn" path="res://Addons/Tiny Swords/Resources/Resources/M_Idle.png" id="41_hqu1o"]
+[ext_resource type="Texture2D" uid="uid://bn3r108u05fak" path="res://Addons/Tiny Swords/Resources/Resources/M_Idle_(NoShadow).png" id="42_1e1tp"]
+[ext_resource type="Texture2D" uid="uid://dsi6ywhqw8vox" path="res://Addons/Tiny Swords/Resources/Resources/M_Spawn.png" id="43_klft7"]
+[ext_resource type="Texture2D" uid="uid://dpe3quk0pd8lw" path="res://Addons/Tiny Swords/Resources/Resources/W_Idle.png" id="44_duckg"]
+[ext_resource type="Texture2D" uid="uid://76367abooasm" path="res://Addons/Tiny Swords/Resources/Resources/W_Idle_(NoShadow).png" id="45_0jsex"]
+[ext_resource type="Texture2D" uid="uid://ci0ciqjswhyev" path="res://Addons/Tiny Swords/Resources/Resources/W_Spawn.png" id="46_oxynk"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TilemapElevation" type="Sprite2D" parent="."]
+position = Vector2(131, 267)
+texture = ExtResource("1_hqwtu")
+
+[node name="TilemapFlat" type="Sprite2D" parent="."]
+position = Vector2(636, 146)
+texture = ExtResource("2_db2qs")
+
+[node name="Shadows" type="Sprite2D" parent="."]
+position = Vector2(356, 337)
+texture = ExtResource("3_2fw71")
+
+[node name="BridgeAll" type="Sprite2D" parent="."]
+position = Vector2(396, 525)
+texture = ExtResource("4_effet")
+
+[node name="Foam" type="Sprite2D" parent="."]
+position = Vector2(1685, 87)
+texture = ExtResource("5_ku20e")
+
+[node name="Rocks01" type="Sprite2D" parent="."]
+position = Vector2(1467, 199)
+texture = ExtResource("6_dovvd")
+
+[node name="Rocks02" type="Sprite2D" parent="."]
+position = Vector2(1467, 263)
+texture = ExtResource("7_ekdon")
+
+[node name="Rocks03" type="Sprite2D" parent="."]
+position = Vector2(1471, 350)
+texture = ExtResource("8_ia1y8")
+
+[node name="Rocks04" type="Sprite2D" parent="."]
+position = Vector2(1486, 436)
+texture = ExtResource("9_tun1j")
+
+[node name="Water" type="Sprite2D" parent="."]
+position = Vector2(2069, 208)
+texture = ExtResource("10_1gvmv")
+
+[node name="ArcherBlue(noArms)" type="Sprite2D" parent="."]
+position = Vector2(1503, 657)
+texture = ExtResource("11_pebl0")
+
+[node name="ArcherBowBlue" type="Sprite2D" parent="."]
+position = Vector2(1460, 898)
+texture = ExtResource("12_sg3hh")
+
+[node name="ArcherBowRed" type="Sprite2D" parent="."]
+position = Vector2(1297, 1033)
+texture = ExtResource("13_7w5my")
+
+[node name="ArcherBowYellow" type="Sprite2D" parent="."]
+position = Vector2(1167, 1178)
+texture = ExtResource("14_r6r0l")
+
+[node name="ArcherPurple(noArms)" type="Sprite2D" parent="."]
+position = Vector2(2613, 661)
+texture = ExtResource("15_apetv")
+
+[node name="ArcherRed(noArms)" type="Sprite2D" parent="."]
+position = Vector2(3663, 661)
+texture = ExtResource("16_kulj5")
+
+[node name="ArcherYellow(noArms)" type="Sprite2D" parent="."]
+position = Vector2(3657, 971)
+texture = ExtResource("17_jesy7")
+
+[node name="ArcherBlue" type="Sprite2D" parent="."]
+position = Vector2(2800, 1465)
+texture = ExtResource("18_xmeas")
+
+[node name="WarriorBlue" type="Sprite2D" parent="."]
+position = Vector2(4806, 1270)
+texture = ExtResource("19_0pvnt")
+
+[node name="PawnBlue" type="Sprite2D" parent="."]
+position = Vector2(5936, 1075)
+texture = ExtResource("20_jwtml")
+
+[node name="Dead" type="Sprite2D" parent="."]
+position = Vector2(4110, 277)
+texture = ExtResource("21_mdmh0")
+
+[node name="TorchRed" type="Sprite2D" parent="."]
+position = Vector2(1214, 1811)
+texture = ExtResource("22_txtup")
+
+[node name="GoblinHouse" type="Sprite2D" parent="."]
+position = Vector2(3688, 1312)
+texture = ExtResource("23_uwwb4")
+
+[node name="GoblinHouseDestroyed" type="Sprite2D" parent="."]
+position = Vector2(3990, 1292)
+texture = ExtResource("24_ggl7q")
+
+[node name="WoodTowerBlue" type="Sprite2D" parent="."]
+position = Vector2(1113, 2777)
+texture = ExtResource("25_c0ov7")
+
+[node name="WoodTowerDestroyed" type="Sprite2D" parent="."]
+position = Vector2(1072, 2969)
+texture = ExtResource("26_pa2hb")
+
+[node name="WoodTowerInConstruction" type="Sprite2D" parent="."]
+position = Vector2(1304, 3002)
+texture = ExtResource("27_x6h0a")
+
+[node name="CastleBlue" type="Sprite2D" parent="."]
+position = Vector2(3822, 1571)
+texture = ExtResource("28_6yi5l")
+
+[node name="CastleConstruction" type="Sprite2D" parent="."]
+position = Vector2(3859, 1803)
+texture = ExtResource("29_u0qie")
+
+[node name="CastleDestroyed" type="Sprite2D" parent="."]
+position = Vector2(3755, 2042)
+texture = ExtResource("30_kg033")
+
+[node name="HouseBlue" type="Sprite2D" parent="."]
+position = Vector2(1383, 3237)
+texture = ExtResource("31_exhuk")
+
+[node name="HouseConstruction" type="Sprite2D" parent="."]
+position = Vector2(1591, 3261)
+texture = ExtResource("32_a8t7j")
+
+[node name="HouseDestroyed" type="Sprite2D" parent="."]
+position = Vector2(1124, 3224)
+texture = ExtResource("33_qm3e8")
+
+[node name="TowerBlue" type="Sprite2D" parent="."]
+position = Vector2(1017, 2497)
+scale = Vector2(0.898438, 1)
+texture = ExtResource("34_sj3j5")
+
+[node name="TowerConstruction" type="Sprite2D" parent="."]
+position = Vector2(838, 3221)
+texture = ExtResource("35_xaa2y")
+
+[node name="TowerDestroyed" type="Sprite2D" parent="."]
+position = Vector2(1568, 2577)
+texture = ExtResource("36_dhnmo")
+
+[node name="PawnRed" type="Sprite2D" parent="."]
+position = Vector2(5932, 2167)
+texture = ExtResource("38_6a0n5")
+
+[node name="GIdle" type="Sprite2D" parent="."]
+position = Vector2(189, -399)
+texture = ExtResource("38_gqw02")
+
+[node name="GIdle(noShadow)" type="Sprite2D" parent="."]
+position = Vector2(252, -396)
+texture = ExtResource("39_lscge")
+
+[node name="GSpawn" type="Sprite2D" parent="."]
+position = Vector2(723, -380)
+texture = ExtResource("40_35v50")
+
+[node name="MIdle" type="Sprite2D" parent="."]
+position = Vector2(176, -306)
+texture = ExtResource("41_hqu1o")
+
+[node name="MIdle(noShadow)" type="Sprite2D" parent="."]
+position = Vector2(238, -305)
+texture = ExtResource("42_1e1tp")
+
+[node name="MSpawn" type="Sprite2D" parent="."]
+position = Vector2(719, -297)
+texture = ExtResource("43_klft7")
+
+[node name="WIdle" type="Sprite2D" parent="."]
+position = Vector2(186, -235)
+texture = ExtResource("44_duckg")
+
+[node name="WIdle(noShadow)" type="Sprite2D" parent="."]
+position = Vector2(252, -232)
+texture = ExtResource("45_0jsex")
+
+[node name="WSpawn" type="Sprite2D" parent="."]
+position = Vector2(711, -214)
+texture = ExtResource("46_oxynk")

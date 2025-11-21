@@ -1,0 +1,125 @@
+[gd_scene load_steps=10 format=3 uid="uid://cyf0b0eyafmje"]
+
+[ext_resource type="Texture2D" uid="uid://dd5wponfmh083" path="res://Addons/Kenny ParticlePack/star_09.png" id="1_fevqc"]
+[ext_resource type="Script" path="res://misc/cogumelo.gd" id="1_vdwdp"]
+[ext_resource type="Texture2D" uid="uid://wqlqjaen1grv" path="res://Addons/Kenny ParticlePack/circle_03.png" id="2_hcjww"]
+[ext_resource type="Texture2D" uid="uid://lf11j2lhck44" path="res://Addons/Kenny ParticlePack/light_02.png" id="3_7kkim"]
+[ext_resource type="Texture2D" uid="uid://6l5v46bvi1t0" path="res://Addons/Tiny Swords/Deco/03.png" id="4_gxfv7"]
+
+[sub_resource type="Animation" id="Animation_veqlg"]
+resource_name = "idle"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Circle03:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Star09:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -6.28319]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Light02:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
+[sub_resource type="Animation" id="Animation_14h05"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Circle03:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Star09:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Light02:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_80tjc"]
+_data = {
+"RESET": SubResource("Animation_14h05"),
+"idle": SubResource("Animation_veqlg")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cu07b"]
+radius = 40.0
+
+[node name="Cogumelo" type="Node2D"]
+script = ExtResource("1_vdwdp")
+
+[node name="Star09" type="Sprite2D" parent="."]
+scale = Vector2(0.329033, 0.329033)
+texture = ExtResource("1_fevqc")
+
+[node name="Circle03" type="Sprite2D" parent="."]
+scale = Vector2(0.175703, 0.175703)
+texture = ExtResource("2_hcjww")
+
+[node name="Light02" type="Sprite2D" parent="."]
+scale = Vector2(0.164075, 0.164075)
+texture = ExtResource("3_7kkim")
+
+[node name="03" type="Sprite2D" parent="."]
+texture = ExtResource("4_gxfv7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_80tjc")
+}
+autoplay = "idle"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_cu07b")

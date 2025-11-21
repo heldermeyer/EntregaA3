@@ -1,0 +1,281 @@
+[gd_scene load_steps=15 format=3 uid="uid://detd0qlxachuj"]
+
+[ext_resource type="Script" path="res://UI/morte.gd" id="1_gda0a"]
+[ext_resource type="Texture2D" uid="uid://6beqhjlqtw2c" path="res://Addons/Tiny Swords/UI/Ribbons/Ribbon_Red_3Slides.png" id="1_n7gn4"]
+[ext_resource type="Texture2D" uid="uid://bdhpjm8v2cdf2" path="res://Addons/Tiny Swords/UI/Banners/Banner_Vertical.png" id="2_7mcd6"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ab4ae"]
+texture = ExtResource("1_n7gn4")
+texture_margin_left = 64.0
+texture_margin_right = 64.0
+axis_stretch_horizontal = 2
+region_rect = Rect2(0, 0, 192, 64)
+
+[sub_resource type="SystemFont" id="SystemFont_dpak4"]
+font_names = PackedStringArray("Fantasy")
+
+[sub_resource type="LabelSettings" id="LabelSettings_memcy"]
+font = SubResource("SystemFont_dpak4")
+font_size = 64
+font_color = Color(0.635294, 0, 0, 1)
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_7ueph"]
+resource_name = "blackout"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GameoverPanel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(384, -104), Vector2(384, 24)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DeathInfo:size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(385, 0), Vector2(385, 400)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("DeathInfo/CenterContainer/GridContainer:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_0amjf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GameoverPanel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(384, 24)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DeathInfo:size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(385, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("DeathInfo/CenterContainer/GridContainer:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7xqfi"]
+_data = {
+"RESET": SubResource("Animation_0amjf"),
+"blackout": SubResource("Animation_7ueph")
+}
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cl734"]
+texture = ExtResource("2_7mcd6")
+texture_margin_left = 32.0
+texture_margin_top = 32.0
+texture_margin_right = 32.0
+texture_margin_bottom = 32.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+region_rect = Rect2(32, 32, 128, 128)
+
+[sub_resource type="SystemFont" id="SystemFont_8mffh"]
+font_names = PackedStringArray("Fantasy")
+
+[sub_resource type="LabelSettings" id="LabelSettings_jq0r5"]
+font = SubResource("SystemFont_8mffh")
+font_size = 36
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_tmnav"]
+font_names = PackedStringArray("Fantasy")
+
+[sub_resource type="LabelSettings" id="LabelSettings_huldw"]
+font = SubResource("SystemFont_tmnav")
+font_size = 48
+font_color = Color(0, 0, 0, 1)
+
+[node name="Morte" type="CanvasLayer"]
+script = ExtResource("1_gda0a")
+
+[node name="Background" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Background"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameoverPanel" type="Panel" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -192.0
+offset_top = 24.0
+offset_right = 192.0
+offset_bottom = 129.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ab4ae")
+
+[node name="Label" type="Label" parent="GameoverPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.0
+offset_top = -44.5
+offset_right = 109.0
+offset_bottom = 20.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Game Over
+"
+label_settings = SubResource("LabelSettings_memcy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_7xqfi")
+}
+autoplay = "blackout"
+
+[node name="DeathInfo" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = -148.0
+offset_right = 193.0
+offset_bottom = -148.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_cl734")
+
+[node name="CenterContainer" type="CenterContainer" parent="DeathInfo"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -188.5
+offset_top = -302.5
+offset_right = 188.5
+offset_bottom = 55.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="DeathInfo/CenterContainer"]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_constants/h_separation = 7
+columns = 2
+
+[node name="Label2" type="Label" parent="DeathInfo/CenterContainer/GridContainer"]
+layout_mode = 2
+text = "Tempo Recorde:"
+label_settings = SubResource("LabelSettings_jq0r5")
+
+[node name="TimeLabel" type="Label" parent="DeathInfo/CenterContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "12:36
+"
+label_settings = SubResource("LabelSettings_huldw")
+
+[node name="Label" type="Label" parent="DeathInfo/CenterContainer/GridContainer"]
+layout_mode = 2
+text = "Inimigos Mortos:"
+label_settings = SubResource("LabelSettings_jq0r5")
+
+[node name="DeadsLabel" type="Label" parent="DeathInfo/CenterContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "58"
+label_settings = SubResource("LabelSettings_jq0r5")
+
+[node name="Label4" type="Label" parent="DeathInfo/CenterContainer/GridContainer"]
+layout_mode = 2
+text = "Você Morreu para:"
+label_settings = SubResource("LabelSettings_jq0r5")
+
+[node name="Killerlabel" type="Label" parent="DeathInfo/CenterContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Big Goblin"
+label_settings = SubResource("LabelSettings_jq0r5")
