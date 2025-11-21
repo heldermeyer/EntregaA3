@@ -63,4 +63,3 @@ Conforme exigido na especificação do projeto sobre o "script de inicializaçã
 * Mateus Maia Ferreira
 * Pedro Vitor Cordeiro Pompeu
 * Ruan Diego de Farias Couto da Silva
-* Adailton de Jesus Cerqueira Junior
